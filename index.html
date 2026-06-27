@@ -1,17 +1,28 @@
-<!-- ... existing code ... -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708177318840573"
-     crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-6708177318840573">
+    <link rel="stylesheet" href="main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
     
-    <!-- Mobile responsive & layout fallback styles -->
+    <title>Nila Lotus - Official Website</title>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708177318840573" crossorigin="anonymous"></script>
+    
     <style>
-        /* 1. CRITICAL LOGO FIX: Prevents logo from blowing up */
+        /* Navbar Constraints */
         .nav-logo {
-            max-height: 60px !important; /* Force height constraint */
+            max-height: 60px !important;
             width: auto;
             object-fit: contain;
         }
-
-        /* 2. CRITICAL NAVBAR FIX: Ensures it stays a top horizontal bar */
         .navbar {
             display: flex !important;
             flex-direction: row;
@@ -24,23 +35,23 @@
             top: 0;
             left: 0;
             z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.95); /* Ensure contrast */
+            background-color: rgba(0, 0, 0, 0.95);
+            transition: top 0.3s ease;
         }
-
         .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
         .navbar a { text-decoration: none; color: #fff; }
         .brand { text-transform: uppercase; letter-spacing: 2px; font-size: 1.2rem; font-weight: 300; }
-        .nav-hid a { display: flex; align-items: center; gap: 8px; font-weight: 300; }
+        .nav-hid { display: flex; align-items: center; gap: 8px; font-weight: 300; color: #fff; cursor: pointer;}
+        .nav-hid a { color: #fff; }
 
-        /* 3. General body & media fixes */
+        /* Grid & Services Card Fixes (Targeted to NOT break hero videos) */
         body { margin: 0; background-color: #050505; color: #f0f0f0; } 
-        img, video { max-width: 100%; height: auto; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 1rem; }
-        .container { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; }
+        .container { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; padding: 2rem; }
         .column { flex: 1 1 200px; }
-        .card { display: flex; flex-direction: column; height: 100%; }
-        .card-content { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card { display: flex; flex-direction: column; height: 100%; background: #111; border: 1px solid #333; }
+        .card-content { flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 15px; }
+        .card video { max-width: 100%; height: auto; } /* Keeps card videos contained */
         
         @media (max-width: 768px) {
             .navbar { padding: 10px 15px; }
@@ -51,12 +62,11 @@
 </head>
 <body>
 
-    <!-- Fixed HTML structure for the Navbar -->
     <nav id="navbar" class="navbar">
         <a href="index.html">
             <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="nav-logo">
         </a>
-        <a href="index.html" class="brand">Nila Lotus Studio</a>
+        <a href="#" class="brand">Nila Lotus Studio</a>
         <ul>
             <li class="nav-hid">
                 <a href="#services"><i class="fa-solid fa-bars" id="menu_icon"></i> Menu</a>
@@ -65,16 +75,50 @@
     </nav>
 
     <section class="videobg" id="video1">
-<!-- ... existing code ... -->
+        <video src="assets/Hero Pages/v1.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
+        <h2>The Fashion</h2>
+        <button>Discover the Designs</button>
+    </section>
+      
+    <section class="videobg" id="video2">
+        <video src="assets/Hero Pages/v2.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
+        <h2>Classic Designs</h2>
+        <button>Discover the Collections</button>
+    </section>
+      
+    <section class="videobg" id="video3">
+        <video src="assets/Hero Pages/v3.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
+        <h2>Floral Designs</h2>
+        <button>Discover the Collections</button>
+    </section>
+      
+    <section class="imagebg" id="image1">
+       <h2 id="h2-2-imagebg">Premium Kits</h2>
+        <button>Discover the Collections</button>
+    </section>
+
+    <section class="videobg" id="video4">
+        <video src="assets/Hero Pages/v5.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
+        <h2>Tambour</h2>
+        <button>Discover the Collections</button>
+    </section>
+
+    <section class="videobg" id="video5">
+        <video src="assets/Hero Pages/v6.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
+        <h2>The Making</h2>
+        <button>Discover the Collections</button>
+    </section>
+
     <section id="services" class="services">
         <h2>Services</h2>
         <div class="grid">
             <div class="grid-item">
                 <div class="card">
-                    <video src="assets/Hero Pages/s1.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
+                    <video src="assets/Hero Pages/s1.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
                     <div class="card-content">
                         <h1>Sketch & Design</h1>
                         <p style="text-align:justify; text-indent:10px;">We bridge the gap between your initial vision and the final garment. Starting with a collaborative consultation, we expertly transform your rough sketches into meticulously planned designs. Our hands-on approach ensures every detail is perfected before a single needle is threaded, delivering a truly flawless blueprint ready for our signature craftsmanship.</p>
+                        <!-- Button links to the new contact page -->
                         <button class="card-btn" onclick="window.location.href='contact.html'">Contact Us</button>
                     </div>
                 </div>
@@ -82,10 +126,11 @@
 
             <div class="grid-item">
                 <div class="card">
-                    <video src="assets/Hero Pages/s2.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
+                    <video src="assets/Hero Pages/s2.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
                     <div class="card-content">
                         <h1>Bespoke Luxury Embroidery</h1>
                         <p style="text-align:justify; text-indent:10px;">We elevate your most significant moments through the exceptional art of the thread. Specializing in high-end custom embroidery, we craft intricate silk details for exquisite bridal ensembles and premium garments alike. Our meticulous execution ensures every bespoke stitch delivers the elegance, precision, and standout craftsmanship your luxury wardrobe demands.</p>
+                        <!-- Button links to the new contact page -->
                         <button class="card-btn" onclick="window.location.href='contact.html'">Contact Us</button>
                     </div>
                 </div>
@@ -93,10 +138,11 @@
 
             <div class="grid-item">
                 <div class="card">
-                    <video src="assets/Hero Pages/s3.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
+                    <video src="assets/Hero Pages/s3.mp4" type="video/mp4" autoplay loop muted playsinline class="video" ></video>
                     <div class="card-content">
                         <h1>The Nilalotus Exclusive Collection</h1>
                         <p style="text-align:justify; text-indent:10px;">Beyond our custom services, we proudly design and produce our own signature line of luxury fashion. This exclusive, in-house collection embodies our uncompromising standards for premium materials and artisanal embroidery. Each beautifully crafted, ready-to-wear piece offers a unique expression of our aesthetic, bringing standout craftsmanship directly to your wardrobe.</p>
+                        <!-- Button links to the new contact page -->
                         <button class="card-btn" onclick="window.location.href='contact.html'">Explore our Collections</button>
                     </div>
                 </div>
@@ -114,18 +160,21 @@
               <div class="cell"><a href="#services" class="links">Sketch & Design</a></div>
               <div class="cell"><a href="#services" class="links">Exclusive Collection</a></div>
             </div>
+            
             <div class="column">
               <div class="cell cell-head">ABOUT NILA LOTUS</div>
               <div class="cell"><a href="about.html" class="links">The Team</a></div>
               <div class="cell"><a href="about.html" class="links">Art & Culture</a></div>
               <div class="cell"><a href="about.html" class="links">Fashion & Trends</a></div>
             </div>
+            
             <div class="column">
               <div class="cell cell-head">CONNECT</div>
               <div class="cell"><a href="contact.html" class="links"><span>Sign up</span> for first access to latest collections, and videos.</a></div>
               <div class="cell"><a href="contact.html" class="links">You can <span>call</span> or <span>email us</span>.</a></div>
               <div class="cell"><a href="contact.html" class="links">Follow Us</a></div>
             </div>
+
             <div class="column">
               <div class="cell cell-head">SITE POLICIES</div>
               <div class="cell"><a href="#" class="links">Sitemap</a></div>
@@ -136,4 +185,62 @@
     </section>
 
     <hr class="hr">
-<!-- ... existing code ... -->
+
+    <footer class="footer">
+        <a href="#" class='language'><i class="fa-solid fa-globe globe-icon" ></i><span>ENGLISH (INTL)</span></a>
+    </footer>
+
+    <div class="last-logo">Nila Lotus Studio</div>
+
+    <script>
+        var lastScrollTop = 0;
+        var navbar = document.getElementById("navbar");
+        
+        window.addEventListener("scroll", function () {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > lastScrollTop) {
+                // Scroll down
+                navbar.style.top = "-100px";
+            } else {
+                // Scroll up
+                navbar.style.top = "0";
+                if (scrollTop === 0) {
+                    navbar.classList.remove("scrolled"); 
+                } else {
+                    navbar.classList.add("scrolled"); 
+                }
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Accordion script preserved from original
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                var panel = this.nextElementSibling;
+                var isActive = this.classList.contains("active");
+
+                // Close all accordion panels
+                for (var j = 0; j < acc.length; j++) {
+                    var otherPanel = acc[j].nextElementSibling;
+                    if (otherPanel !== panel) {
+                        otherPanel.style.maxHeight = null;
+                        acc[j].classList.remove("active");
+                    }
+                }
+
+                if (isActive) {
+                    this.classList.remove("active");
+                    panel.style.maxHeight = null;
+                } else {
+                    this.classList.add("active");
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
