@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nila Lotus Studio</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS for robust, mobile-friendly layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration for Custom Branding -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37', // Subtle gold accent if needed
+                            dark: '#050505',
+                            surface: '#111111',
+                            border: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #f0f0f0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Smooth transitions for inputs */
+        .input-field {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Navbar scroll transition */
+        #navbar {
+            transition: top 0.4s ease-in-out, background-color 0.3s ease;
+        }
+        .scrolled {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid #222;
+        }
+
+        /* Custom scrollbar for textareas */
+        textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+        textarea::-webkit-scrollbar-track {
+            background: #111; 
+        }
+        textarea::-webkit-scrollbar-thumb {
+            background: #444; 
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Fixed Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center">
+        <!-- Logo & Brand -->
+        <a href="index.html" class="flex items-center gap-4 group">
+            <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/100x100/000000/FFFFFF?text=NL'">
+            <span class="text-white text-lg md:text-xl font-light uppercase tracking-[0.2em] hidden sm:block group-hover:text-gray-300 transition-colors">
+                Nila Lotus Studio
+            </span>
+        </a>
+
+        <!-- Hamburger Menu Link -->
+        <a href="index.html#services" class="text-white hover:text-gray-400 transition-colors flex items-center gap-2 text-sm md:text-base tracking-wider uppercase">
+            <i class="fa-solid fa-bars text-lg"></i> 
+            <span class="hidden md:inline">Menu</span>
+        </a>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-40 pb-16 px-6 text-center w-full max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-light uppercase tracking-[0.15em] mb-6 text-white">Connect With Us</h1>
+        <div class="h-px w-24 bg-gray-700 mx-auto mb-6"></div>
+        <p class="text-gray-400 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+            Begin your bespoke journey today. We welcome inquiries for custom designs, luxury embroidery, and exclusive collaborations.
+        </p>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+        
+        <!-- Contact Information (Left Column) -->
+        <div class="col-span-1 lg:col-span-5 flex flex-col gap-10">
+            <div>
+                <h2 class="text-2xl font-light text-white mb-6 tracking-wider uppercase">Studio Details</h2>
+                <p class="text-gray-400 font-light leading-relaxed mb-8">
+                    Whether you are looking to commission a bespoke bridal piece or have a question about our collections, our team is at your service.
+                </p>
+            </div>
+
+            <!-- Contact Details List -->
+            <div class="space-y-8">
+                <!-- Phone -->
+                <div class="flex items-start gap-4 group">
+                    <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-gray-400 group-hover:border-white group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-sm font-medium tracking-widest uppercase mb-1">Phone</h3>
+                        <a href="tel:+919740259501" class="text-gray-400 hover:text-white transition-colors font-light block">
+                            +91 9740259501
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="flex items-start gap-4 group">
+                    <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-gray-400 group-hover:border-white group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-sm font-medium tracking-widest uppercase mb-1">Email</h3>
+                        <a href="mailto:NilalotusStudio@gmail.com" class="text-gray-400 hover:text-white transition-colors font-light block break-all">
+                            NilalotusStudio@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="flex items-start gap-4 group">
+                    <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-gray-400 group-hover:border-white group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-sm font-medium tracking-widest uppercase mb-1">Location</h3>
+                        <p class="text-gray-400 font-light leading-relaxed">
+                            Ramaiah Building,<br>
+                            Allalasandra Main Road,<br>
+                            Yelahanka, Bangalore 560064
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form (Right Column) -->
+        <div class="col-span-1 lg:col-span-7 bg-brand-surface p-8 md:p-12 border border-brand-border rounded-sm shadow-2xl">
+            <h2 class="text-2xl font-light text-white mb-8 tracking-wider uppercase">Send an Inquiry</h2>
+            
+            <form action="https://formsubmit.co/NilalotusStudio@gmail.com" method="POST" class="flex flex-col gap-6">
+                <!-- FormSubmit Configuration Fields -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="New Inquiry from Nila Lotus Website!">
+                <!-- Optional: Add a custom thank you page URL here in the future -->
+                <!-- <input type="hidden" name="_next" value="https://nilalotus.in/thanks.html"> -->
+
+                <!-- Name Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="name" class="text-xs text-gray-500 tracking-widest uppercase">Full Name</label>
+                    <input type="text" id="name" name="name" required
+                        class="input-field w-full bg-transparent border-b border-gray-700 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white focus:ring-0 font-light"
+                        placeholder="Enter your name">
+                </div>
+
+                <!-- Email Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-xs text-gray-500 tracking-widest uppercase">Email Address</label>
+                    <input type="email" id="email" name="email" required
+                        class="input-field w-full bg-transparent border-b border-gray-700 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white focus:ring-0 font-light"
+                        placeholder="Enter your email">
+                </div>
+
+                <!-- Subject Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="subject" class="text-xs text-gray-500 tracking-widest uppercase">Subject</label>
+                    <input type="text" id="subject" name="subject"
+                        class="input-field w-full bg-transparent border-b border-gray-700 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white focus:ring-0 font-light"
+                        placeholder="e.g., Bridal Customization, Collaboration">
+                </div>
+
+                <!-- Message Field -->
+                <div class="flex flex-col gap-2">
+                    <label for="message" class="text-xs text-gray-500 tracking-widest uppercase">Your Message</label>
+                    <textarea id="message" name="message" required rows="5"
+                        class="input-field w-full bg-transparent border-b border-gray-700 py-3 text-white placeholder-gray-600 focus:outline-none focus:border-white focus:ring-0 font-light resize-y"
+                        placeholder="Tell us about your requirements..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                    class="mt-6 w-full bg-white text-black font-medium py-4 px-8 uppercase tracking-widest hover:bg-gray-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Site Footer Links -->
+    <section class="border-t border-brand-border bg-black py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            <!-- Column 1 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Services</h4>
+                <a href="index.html#services" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Personalization</a>
+                <a href="index.html#services" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Luxury Embroidery</a>
+                <a href="index.html#services" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Sketch & Design</a>
+                <a href="index.html#services" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Exclusive Collection</a>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">About Nila Lotus</h4>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">The Team</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Art & Culture</a>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Fashion & Trends</a>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Connect</h4>
+                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                    <span class="text-white font-medium">Sign up</span> for first access to latest collections.
+                </p>
+                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                    You can <a href="tel:+919740259501" class="text-white font-medium hover:underline">call</a> or <a href="mailto:NilalotusStudio@gmail.com" class="text-white font-medium hover:underline">email us</a>.
+                </p>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-pinterest text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Site Policies</h4>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Sitemap</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Legal & Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Cookies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Footer Bar -->
+    <footer class="border-t border-brand-border bg-black py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <a href="#" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-xs font-medium tracking-widest uppercase">
+            <i class="fa-solid fa-globe"></i>
+            <span>English (Intl)</span>
+        </a>
+        <div class="text-gray-600 font-light text-sm uppercase tracking-widest text-center md:text-right">
+            &copy; 2024 Nila Lotus Studio
+        </div>
+    </footer>
+
+    <!-- Scroll JavaScript for Navbar -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var lastScrollTop = 0;
+            var navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", function () {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Hide navbar on scroll down, show on scroll up
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    navbar.style.top = "-100px";
+                } else {
+                    navbar.style.top = "0";
+                    // Add background color when not at the very top
+                    if (scrollTop > 50) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
