@@ -4,226 +4,176 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-6708177318840573">
+    
+    <!-- Links to your existing stylesheet -->
     <link rel="stylesheet" href="main.css">
-
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 
-'apple-touch-icon-retina.png')}">
-    <title>Nila Lotus - Official Website</title>
+    <title>About Us - Nila Lotus Studio</title>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6708177318840573"
-     crossorigin="anonymous"></script>
-    
+    <!-- Page-specific styles to ensure it looks good immediately -->
+    <style>
+        .page-header {
+            padding: 150px 20px 80px;
+            text-align: center;
+            background-color: #0a0a0a; /* Fallback dark background */
+            color: #fff;
+        }
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        /* Assuming your site has a dark mode theme based on the screenshot */
+        body { background-color: #000; color: #f0f0f0; } 
+        .about-content { color: #ccc; }
+        
+        .story-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .story-section p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .team-member {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #333;
+            background: #111;
+        }
+        .team-member h3 { margin: 15px 0 5px; color: #fff; }
+        .team-member p { font-size: 0.9rem; color: #aaa; }
+    </style>
 </head>
 <body>
 
+    <!-- Fixed Navbar Structure -->
     <nav id="navbar" class="navbar">
-        
-            <a href="">
-                <img src="assets/Hero Pages/logo.png"
-                     alt="Nila Lotus Studio"
-                     class="nav-logo">
-            </a>
-        </li>
-    </ul>
-              <a href="#" class="brand">Nila Lotus Studio</a>
-<ul>
-           <a href="#services" class="nav-hid"> <li><i class="fa-solid fa-bars" id="menu_icon"></i></li>
-            <li>Menu</a></li>
-
-  <li>
+        <a href="index.html">
+            <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="nav-logo">
+        </a>
+        <a href="index.html" class="brand">Nila Lotus Studio</a>
+        <ul>
+            <li class="nav-hid">
+                <a href="index.html#services"><i class="fa-solid fa-bars" id="menu_icon"></i> Menu</a>
+            </li>
+        </ul>
     </nav>
 
-    <section class="videobg" id="video1">
-        <video src="assets/Hero Pages/v1.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        <h2>The Fashion</h2>
-        <button>Discover the Designs</button>
-    </section>
-      
-    <section class="videobg" id="video2">
-        <video src="assets/Hero Pages/v2.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        <h2>Classic Designs</h2>
-        <button>Discover the Collections</button>
-    </section>
-      
-    <section class="videobg" id="video3">
-        <video src="assets/Hero Pages/v3.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        <h2>Floral Designs</h2>
-        <button>Discover the Collections</button>
-    </section>
-      
-    <section class="imagebg" id="image1">
-        
-       <h2 id="h2-2-imagebg">Premium Kits</h2>
-        <button>Discover the Collections</button>
-    </section>
+    <header class="page-header">
+        <h1>The Art of Nila Lotus</h1>
+        <p>Bridging timeless tradition with modern luxury.</p>
+    </header>
 
-    <section class="videobg" id="video4">
-        <video src="assets/Hero Pages/v5.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        <h2>Tambour</h2>
-        <button>Discover the Collections</button>
-    </section>
+    <main class="about-content">
+        <section class="story-section">
+            <h2>Our Story</h2>
+            <p>Welcome to Nila Lotus Studio. We are a sanctuary of design where the delicate art of embroidery meets the bold strokes of modern fashion. Born from a passion for intricate craftsmanship, our studio is dedicated to elevating garments into wearable masterpieces.</p>
+            <p>Every thread we weave and every design we sketch is rooted in a deep appreciation for art and culture. We believe that true luxury lies in the details—the quiet hours spent perfecting a tambour stitch, the careful selection of premium silks, and the personalized collaboration that brings a bespoke vision to life.</p>
+        </section>
 
-    <section class="videobg" id="video5">
-        <video src="assets/Hero Pages/v6.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        <h2>The Making</h2>
-        <button>Discover the Collections</button>
-    </section>
-
-    <section id="services" class="services">
-        <h2>Services</h2>
-        <div class="grid">
-            <div class="grid-item">
-                <div class="card">
-<video src="assets/Hero Pages/s1.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-                    <div class="card-content">
-                        <h1>Sketch & Design</h1>
-                   <p style="text-align:justify; text-indent:10px;">We bridge the gap between your initial vision and the final garment. Starting with a collaborative consultation, we expertly transform your rough sketches into meticulously planned designs. Our hands-on approach ensures every detail is perfected before a single needle is threaded, delivering a truly flawless blueprint ready for our signature craftsmanship.</p>
-                        <button class="card-btn">Contact Us</button>
-                    </div>
+        <section class="story-section">
+            <h2>The Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <h3>Creative Director</h3>
+                    <p>Leading the vision with over a decade of experience in luxury fashion design.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Master Artisan</h3>
+                    <p>Specializing in bespoke hand-embroidery and traditional tambour techniques.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Design Consultant</h3>
+                    <p>Bridging the gap between your ideas and our exceptional craftsmanship.</p>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="grid-item">
-                <div class="card">
-<video src="assets/Hero Pages/s2.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-        
-                    <div class="card-content">
-                        <h1>Bespoke Luxury Embroidery</h1>
-                        <p style="text-align:justify; text-indent:10px;">We elevate your most significant moments through the exceptional art of the thread. Specializing in high-end custom embroidery, we craft intricate silk details for exquisite bridal ensembles and premium garments alike. Our meticulous execution ensures every bespoke stitch delivers the elegance, precision, and standout craftsmanship your luxury wardrobe demands.</p>
-                        <button class="card-btn">Contact Us</button>
-              
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item">
-                <div class="card">
-<video src="assets/Hero Pages/s3.mp4" type="video/mp4" autoplay loop muted plays-inline class="video" ></video>
-                   
-                    <div class="card-content">
-                        <h1>The Nilalotus Exclusive Collection</h1>
-                        <p style="text-align:justify; text-indent:10px;">Beyond our custom services, we proudly design and produce our own signature line of luxury fashion. This exclusive, in-house collection embodies our uncompromising standards for premium materials and artisanal embroidery. Each beautifully crafted, ready-to-wear piece offers a unique expression of our aesthetic, bringing standout craftsmanship directly to your wardrobe.</p>
-                        <button class="card-btn">Explore our Collections</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        
-    </section>
-    
+    <!-- Shared Footer Links -->
     <section class="links">
         <hr class="hr">
         <div class="container">
-         
             <div class="column">
               <div class="cell cell-head">SERVICES</div>
-              <div class="cell"><a href="#" class="links">Personalization</a></div>
-              <div class="cell"><a href="#" class="links">Luxury Embroidery</a></div>
-              <div class="cell"><a href="#" class="links">Sketch & Design</a></div>
-  <div class="cell"><a href="#" class="links">Exclusive Collection</a></div>
-
+              <div class="cell"><a href="index.html#services" class="links">Personalization</a></div>
+              <div class="cell"><a href="index.html#services" class="links">Luxury Embroidery</a></div>
+              <div class="cell"><a href="index.html#services" class="links">Sketch & Design</a></div>
+              <div class="cell"><a href="index.html#services" class="links">Exclusive Collection</a></div>
             </div>
             <div class="column">
               <div class="cell cell-head">ABOUT NILA LOTUS</div>
-              <div class="cell"><a href="#" class="links">The Team</a></div>
-              <div class="cell"><a href="#" class="links">Art & Culture</a></div>
-              <div class="cell"><a href="#" class="links">Fashion & Trends</a></div>
-           
+              <div class="cell"><a href="about.html" class="links">The Team</a></div>
+              <div class="cell"><a href="about.html" class="links">Art & Culture</a></div>
+              <div class="cell"><a href="about.html" class="links">Fashion & Trends</a></div>
             </div>
             <div class="column">
               <div class="cell cell-head">CONNECT</div>
-              <div class="cell"><a href="#" class="links"><span>Sign up</span> for first access to latest collections, and videos.</a></div>
-          
- <div class="cell"><a href="#" class="links">You can <span>call</span> or <span>email us</span>.</a></div>
-    <div class="cell"><a href="#" class="links">Follow Us</a></div>
+              <div class="cell"><a href="contact.html" class="links"><span>Sign up</span> for first access to latest collections.</a></div>
+              <div class="cell"><a href="contact.html" class="links">You can <span>call</span> or <span>email us</span>.</a></div>
+              <div class="cell"><a href="#" class="links">Follow Us</a></div>
             </div>
-
-   <div class="column">
- <div class="cell cell-head">SITE POLICIES</div>
+            <div class="column">
+              <div class="cell cell-head">SITE POLICIES</div>
               <div class="cell"><a href="#" class="links">Sitemap</a></div>
               <div class="cell"><a href="#" class="links">Legal & privacy</a></div>
               <div class="cell"><a href="#" class="links">Cookies</a></div>
-
             </div>
+        </div>
     </section>
 
     <hr class="hr">
 
     <footer class="footer">
-        
-        <a href="#" class='language'><i class="fa-solid fa-globe globe-icon" ></i><span>ENGLISH (INTL)</span></a>
-           </footer>
+        <a href="#" class='language'><i class="fa-solid fa-globe globe-icon"></i><span>ENGLISH (INTL)</span></a>
+    </footer>
 
     <div class="last-logo">Nila Lotus Studio</div>
 
-
-    
-
-
-
     <script>
         var lastScrollTop = 0;
-        navbar = document.getElementById("navbar");
+        var navbar = document.getElementById("navbar");
         window.addEventListener("scroll", function () {
-        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            navbar.style.top = "-100px";
-        } else {
-            navbar.style.top = "0";
-            if (scrollTop === 0) {
-                navbar.classList.remove("scrolled"); 
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.top = "-100px";
             } else {
-                navbar.classList.add("scrolled"); 
+                navbar.style.top = "0";
+                if (scrollTop === 0) {
+                    navbar.classList.remove("scrolled"); 
+                } else {
+                    navbar.classList.add("scrolled"); 
                 }
             }
-        lastScrollTop = scrollTop;
-        }
-        );
-
-
-
-//Accordian
-
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                var panel = this.nextElementSibling;
-                var isActive = this.classList.contains("active");
-
-                // Close all accordion panels
-
-                for (var j = 0; j < acc.length; j++) {
-                    var otherPanel = acc[j].nextElementSibling;
-                    if (otherPanel !== panel) {
-                        otherPanel.style.maxHeight = null;
-                        acc[j].classList.remove("active");
-                    }
-                }
-
-                if (isActive) {
-                    this.classList.remove("active");
-                    panel.style.maxHeight = null;
-                } else {
-                    this.classList.add("active");
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                }
-            );
-        }
-
-
+            lastScrollTop = scrollTop;
+        });
     </script>
 </body>
 </html>
