@@ -26,7 +26,7 @@
                     },
                     colors: {
                         brand: {
-                            gold: '#D4AF37', // Subtle gold accent if needed
+                            gold: '#D4AF37',
                             dark: '#050505',
                             surface: '#111111',
                             border: '#333333'
@@ -73,21 +73,29 @@
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <!-- Fixed Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center">
-        <!-- Logo & Brand -->
-        <a href="index.html" class="flex items-center gap-4 group">
-            <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/100x100/000000/FFFFFF?text=NL'">
-            <span class="text-white text-lg md:text-xl font-light uppercase tracking-[0.2em] hidden sm:block group-hover:text-gray-300 transition-colors">
+    <!-- Fixed Navbar with Full-Width White Hover Effect -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-black border-b border-transparent hover:bg-white transition-colors duration-500 group">
+        <a href="index.html" class="flex items-center gap-4 p-2 rounded-sm transition-colors duration-300">
+            <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="h-14 md:h-16 w-auto object-contain transition-transform duration-500 hover:scale-105" onerror="this.src='https://placehold.co/100x100/FFFFFF/000000?text=NL'">
+            <span class="text-white text-base md:text-xl font-light uppercase tracking-[0.2em] hidden sm:block group-hover:text-black transition-colors duration-500">
                 Nila Lotus Studio
             </span>
         </a>
 
-        <!-- Hamburger Menu Link -->
-        <a href="index.html#services" class="text-white hover:text-gray-400 transition-colors flex items-center gap-2 text-sm md:text-base tracking-wider uppercase">
-            <i class="fa-solid fa-bars text-lg"></i> 
-            <span class="hidden md:inline">Menu</span>
-        </a>
+        <div class="flex items-center gap-6">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-2 text-sm font-light uppercase tracking-widest text-gray-400">
+                <a href="index.html#services" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">Services</a>
+                <a href="about.html" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">About</a>
+                <a href="contact.html" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Icon -->
+            <a href="index.html#services" class="text-white group-hover:text-black px-4 py-2 rounded-sm hover:!text-gray-500 transition-colors duration-300 flex items-center gap-2 text-sm md:hidden tracking-wider uppercase">
+                <i class="fa-solid fa-bars text-lg"></i> 
+                <span>Menu</span>
+            </a>
+        </div>
     </nav>
 
     <!-- Page Header -->
@@ -121,6 +129,19 @@
                     <div>
                         <h3 class="text-white text-sm font-medium tracking-widest uppercase mb-1">Phone</h3>
                         <a href="tel:+919740259501" class="text-gray-400 hover:text-white transition-colors font-light block">
+                            +91 9740259501
+                        </a>
+                    </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="flex items-start gap-4 group">
+                    <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full border border-brand-border flex items-center justify-center text-gray-400 group-hover:border-white group-hover:text-white transition-colors">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-sm font-medium tracking-widest uppercase mb-1">WhatsApp</h3>
+                        <a href="https://wa.me/919740259501" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors font-light block">
                             +91 9740259501
                         </a>
                     </div>
@@ -164,8 +185,6 @@
                 <!-- FormSubmit Configuration Fields -->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="New Inquiry from Nila Lotus Website!">
-                <!-- Optional: Add a custom thank you page URL here in the future -->
-                <!-- <input type="hidden" name="_next" value="https://nilalotus.in/thanks.html"> -->
 
                 <!-- Name Field -->
                 <div class="flex flex-col gap-2">
@@ -239,7 +258,7 @@
                 </p>
                 <div class="flex gap-4 mt-2">
                     <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-pinterest text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
                     <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
                 </div>
             </div>
