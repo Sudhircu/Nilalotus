@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections & Gallery - Nila Lotus Studio</title>
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            dark: '#050505',
+                            surface: '#111111',
+                            border: '#333333'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000;
+            color: #f0f0f0;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        #navbar {
+            transition: top 0.4s ease-in-out, background-color 0.3s ease;
+        }
+        .scrolled {
+            background-color: rgba(0, 0, 0, 0.95) !important;
+            border-bottom: 1px solid #222;
+        }
+
+        /* Gallery Grid Animations */
+        .gallery-item {
+            transition: all 0.5s ease-out;
+            opacity: 1;
+            transform: scale(1);
+        }
+        .gallery-item.hide {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        /* Subdued scrollbar for gallery */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Fixed Navbar with Full-Width White Hover Effect -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center bg-black border-b border-transparent hover:bg-white transition-colors duration-500 group">
+        <!-- Logo Area -->
+        <a href="index.html" class="flex items-center gap-4 transition-colors duration-300">
+            <img src="assets/Hero Pages/logo.png" alt="Nila Lotus Studio" class="h-14 md:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105" onerror="this.src='https://placehold.co/100x100/FFFFFF/000000?text=NL'" style="max-height: 60px !important;">
+            <span class="text-white text-base md:text-xl font-light uppercase tracking-[0.2em] hidden sm:block group-hover:text-black transition-colors duration-500">
+                Nila Lotus Studio
+            </span>
+        </a>
+
+        <!-- Menu Area -->
+        <div class="flex items-center gap-6">
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex gap-2 text-sm font-light uppercase tracking-widest text-gray-400">
+                <a href="services.html" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">Services</a>
+                <a href="about.html" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">About</a>
+                <a href="contact.html" class="px-4 py-2 rounded-sm group-hover:text-black hover:!text-gray-500 transition-colors duration-300">Contact</a>
+            </div>
+            
+            <!-- Mobile Menu Icon -->
+            <a href="services.html" class="text-white group-hover:text-black px-4 py-2 rounded-sm hover:!text-gray-500 transition-colors duration-300 flex items-center gap-2 text-sm md:hidden tracking-wider uppercase">
+                <i class="fa-solid fa-bars text-lg"></i> 
+                <span>Menu</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="pt-40 pb-12 px-6 text-center w-full max-w-5xl mx-auto">
+        <h1 class="text-4xl md:text-6xl font-light uppercase tracking-[0.15em] mb-6 text-white">The Archives</h1>
+        <div class="h-px w-24 bg-gray-700 mx-auto mb-8"></div>
+        <p class="text-gray-400 text-lg font-light max-w-2xl mx-auto leading-relaxed mb-12">
+            A curated visual journey through our bespoke luxury collections, tambour craftsmanship, and artistic inspirations.
+        </p>
+
+        <!-- Gallery Filters -->
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+            <button class="filter-btn active text-white uppercase tracking-widest text-xs md:text-sm font-medium border-b border-white pb-1" data-filter="all">All</button>
+            <button class="filter-btn text-gray-500 hover:text-white uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent hover:border-gray-500 pb-1 transition-all" data-filter="fashion">Fashion & Trends</button>
+            <button class="filter-btn text-gray-500 hover:text-white uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent hover:border-gray-500 pb-1 transition-all" data-filter="art">Art & Culture</button>
+            <button class="filter-btn text-gray-500 hover:text-white uppercase tracking-widest text-xs md:text-sm font-medium border-b border-transparent hover:border-gray-500 pb-1 transition-all" data-filter="tambour">Tambour Work</button>
+        </div>
+    </header>
+
+    <!-- Main Gallery Area -->
+    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4 md:px-8 pb-24 relative min-h-screen">
+        
+        <!-- Grid Container -->
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 auto-rows-[300px]">
+
+            <!-- Item 1 (Tall - Video) -->
+            <div class="gallery-item fashion md:row-span-2 relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <video src="assets/Hero Pages/v1.mp4" type="video/mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"></video>
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Fashion & Trends</span>
+                    <h3 class="text-white text-2xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">The Ivory Collection</h3>
+                </div>
+            </div>
+
+            <!-- Item 2 (Standard Square - Image) -->
+            <div class="gallery-item art relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <!-- Fallback to placeholder if image is missing -->
+                <img src="assets/Hero Pages/v2-poster.jpg" alt="Art Collection" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0" onerror="this.src='https://placehold.co/600x600/111111/444444?text=Art+Culture'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Art & Culture</span>
+                    <h3 class="text-white text-xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">Heritage Silks</h3>
+                </div>
+            </div>
+
+            <!-- Item 3 (Wide - Video) -->
+            <div class="gallery-item tambour md:col-span-1 xl:col-span-2 relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <video src="assets/Hero Pages/v5.mp4" type="video/mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Tambour Work</span>
+                    <h3 class="text-white text-2xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">Precision in Motion</h3>
+                </div>
+            </div>
+
+            <!-- Item 4 (Standard Square - Image) -->
+            <div class="gallery-item fashion relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <img src="assets/Hero Pages/your-premium-kits-image.jpg" alt="Premium Kit" class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700" onerror="this.src='https://placehold.co/600x600/111111/444444?text=Premium+Kits'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Fashion & Trends</span>
+                    <h3 class="text-white text-xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">Premium Kits</h3>
+                </div>
+            </div>
+
+            <!-- Item 5 (Tall - Video) -->
+            <div class="gallery-item art md:row-span-2 relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <video src="assets/Hero Pages/v3.mp4" type="video/mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700"></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Art & Culture</span>
+                    <h3 class="text-white text-2xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">Floral Expressions</h3>
+                </div>
+            </div>
+
+            <!-- Item 6 (Wide - Video) -->
+            <div class="gallery-item tambour md:col-span-1 xl:col-span-2 relative group overflow-hidden bg-brand-surface border border-brand-border cursor-pointer">
+                <video src="assets/Hero Pages/v6.mp4" type="video/mp4" autoplay loop muted playsinline class="w-full h-full object-cover opacity-80 group-hover:scale-110 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0"></video>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+                    <span class="text-brand-gold text-xs font-medium tracking-[0.2em] uppercase mb-2 block transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">Tambour Work</span>
+                    <h3 class="text-white text-2xl font-light tracking-widest uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">The Making Process</h3>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Site Footer Links -->
+    <section class="border-t border-brand-border bg-black py-16 px-6 md:px-12 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            <!-- Column 1 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Services</h4>
+                <a href="services.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Personalization</a>
+                <a href="services.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Luxury Embroidery</a>
+                <a href="services.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Sketch & Design</a>
+                <a href="gallery.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Exclusive Collection</a>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">About Nila Lotus</h4>
+                <a href="about.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">The Team</a>
+                <a href="gallery.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Art & Culture</a>
+                <a href="gallery.html" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Fashion & Trends</a>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Connect</h4>
+                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                    <span class="text-white font-medium cursor-pointer hover:underline">Sign up</span> for first access to latest collections.
+                </p>
+                <p class="text-gray-400 text-sm font-light leading-relaxed">
+                    You can <a href="contact.html" class="text-white font-medium hover:underline">call</a> or <a href="contact.html" class="text-white font-medium hover:underline">email us</a>.
+                </p>
+                <div class="flex gap-4 mt-2">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-pinterest text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="flex flex-col gap-4">
+                <h4 class="text-white text-xs font-medium tracking-[0.2em] mb-2 uppercase">Site Policies</h4>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Sitemap</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Legal & Privacy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm font-light">Cookies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Footer Bar -->
+    <footer class="border-t border-brand-border bg-black py-8 px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <a href="#" class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-xs font-medium tracking-widest uppercase">
+            <i class="fa-solid fa-globe"></i>
+            <span>English (Intl)</span>
+        </a>
+        <div class="text-gray-600 font-light text-sm uppercase tracking-widest text-center md:text-right">
+            NILA LOTUS STUDIO &copy; 2024
+        </div>
+    </footer>
+
+    <!-- JavaScript for Navbar Scroll and Gallery Filtering -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- NAVBAR SCROLL LOGIC ---
+            var lastScrollTop = 0;
+            var navbar = document.getElementById("navbar");
+
+            window.addEventListener("scroll", function () {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Hide navbar on scroll down, show on scroll up
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    navbar.style.top = "-100px";
+                } else {
+                    navbar.style.top = "0";
+                    // Add background color when not at the very top
+                    if (scrollTop > 50) {
+                        navbar.classList.add("scrolled");
+                    } else {
+                        navbar.classList.remove("scrolled");
+                    }
+                }
+                lastScrollTop = scrollTop;
+            });
+
+            // --- GALLERY FILTER LOGIC ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const grid = document.getElementById('gallery-grid');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active state from all buttons
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'text-white', 'border-white');
+                        b.classList.add('text-gray-500', 'border-transparent');
+                    });
+                    
+                    // Add active state to clicked button
+                    btn.classList.add('active', 'text-white', 'border-white');
+                    btn.classList.remove('text-gray-500', 'border-transparent');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        // Reset display so animation works
+                        item.style.position = 'relative'; 
+
+                        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                            item.classList.remove('hide');
+                        } else {
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
